@@ -1,0 +1,243 @@
+<html>
+<head>
+	<title>The Encryptor</title>
+<script>
+
+function encryptChar(xString)
+{
+    if(xString.length > 1)
+        alert("that's too long!");
+
+
+    xString = xString.toLowerCase();
+    if(xString == "a")
+        xString="k";    
+    else if(xString== "b")
+        xString="e";
+    else if(xString== "c")
+        xString="z";
+    else if(xString== "d")
+        xString="x";
+    else if(xString== "e")
+        xString="p";
+    else if(xString== "f")
+        xString="t";
+    else if(xString== "g")
+        xString="a";
+    else if(xString== "h")
+        xString="s";
+    else if(xString== "i")
+        xString="d";
+    else if(xString== "j")
+        xString="w";
+    else if(xString== "k")
+        xString="b";
+    else if(xString== "l")
+        xString="q";
+    else if(xString== "m")
+        xString="c";
+    else if(xString== "n")
+        xString="f";
+    else if(xString== "o")
+        xString="u";
+    else if(xString== "p")
+        xString="r";
+    else if(xString== "q")
+        xString="h";
+    else if(xString== "r")
+        xString="y";
+    else if(xString== "s")
+        xString="g";
+    else if(xString== "t")
+        xString="i";
+    else if(xString== "u")
+        xString="l";
+    else if(xString== "v")
+        xString="n";
+    else if(xString== "w")
+        xString="o";
+    else if(xString== "x")
+        xString="v";
+    else if(xString== "y")
+        xString="m";
+    else if(xString== "z")
+        xString="j";
+    
+
+
+
+
+    return xString;
+
+}
+
+
+function decryptChar(xString)
+{
+    if(xString.length > 1)
+        alert("that's too long!");
+
+
+    xString = xString.toLowerCase();
+    if(xString == "k")
+        xString="a";    
+    else if(xString== "e")
+        xString="b";
+    else if(xString== "z")
+        xString="c";
+    else if(xString== "x")
+        xString="d";
+    else if(xString== "p")
+        xString="e";
+    else if(xString== "t")
+        xString="f";
+    else if(xString== "a")
+        xString="g";
+    else if(xString== "s")
+        xString="h";
+    else if(xString== "d")
+        xString="i";
+    else if(xString== "w")
+        xString="j";
+    else if(xString== "b")
+        xString="k";
+    else if(xString== "q")
+        xString="l";
+    else if(xString== "c")
+        xString="m";
+    else if(xString== "f")
+        xString="n";
+    else if(xString== "u")
+        xString="o";
+    else if(xString== "r")
+        xString="p";
+    else if(xString== "h")
+        xString="q";
+    else if(xString== "y")
+        xString="r";
+    else if(xString== "g")
+        xString="s";
+    else if(xString== "i")
+        xString="t";
+    else if(xString== "l")
+        xString="u";
+    else if(xString== "n")
+        xString="v";
+    else if(xString== "o")
+        xString="w";
+    else if(xString== "v")
+        xString="x";
+    else if(xString== "m")
+        xString="y";
+    else if(xString== "j")
+        xString="z";
+    
+
+
+
+
+    return xString;
+
+}
+
+
+
+
+function encryptData()
+{
+    
+    var xString;
+    x = document.getElementById('inputText').value.toLowerCase(); // "My name is Jackson";
+    
+    var xString = x.split("");
+    
+
+     var i;
+    var outString = "";
+
+    for (i=0;i < xString.length;i++)
+    {
+      outString = outString + encryptChar(xString[i]);
+    }
+   
+
+      
+    //alert(outString);
+
+    var txt=document.getElementById("divEncrypted")
+    txt.innerHTML=outString;
+    
+
+
+}
+
+
+function decryptdata()
+{
+
+     var xString;
+    x = document.getElementById('encryptedText').value.toLowerCase(); // "My name is Jackson";
+    
+    var xString = x.split("");
+    
+
+     var i;
+    var outString = "";
+
+    for (i=0;i < xString.length;i++)
+    {
+      outString = outString + decryptChar(xString[i]);
+    }
+   
+
+      
+    var txt=document.getElementById("divDecrypted")
+    txt.innerHTML=outString;
+
+   
+
+
+}
+
+</script>
+
+</head>
+
+<body bgcolor="#000000">
+ 
+<p style="color:#00FF00">Welcome to the <strong><em>encryptor</em></strong>!</p>
+<p style="color:#00DD00">Input the text you would like <strong><em>encrypted</strong></em>..</p>
+<a href=http://www.codecademy.com/><img align="right"src="http://media2.govtech.com/images/GOV-carousel-code.jpg" /></a>
+<p align="right" style="color:#00DD00" font-size=("20px")>Click the picture to go to http://www.codecademy.com/<p>
+
+<textarea rows="10" cols="60" id="inputText"></textarea>
+
+
+<br><br>
+
+<button onclick="encryptData()">Encrypt</button>
+
+<br><br>
+
+<div style="color:#00DD00;width:500px;" id="divEncrypted"></div>
+
+
+
+<p style="color:#00DD00">Input the text you would like <strong><em>decrypted</strong></em>..</p>
+
+<textarea rows="10" cols="60" id="encryptedText"></textarea>
+
+
+<br><br>
+
+
+<button onclick="decryptdata()">Decrypt</button>
+
+<br><br>
+<div style="color:#00DD00;width:500px;" id="divDecrypted"></div>
+
+
+
+
+</body>
+</html>
